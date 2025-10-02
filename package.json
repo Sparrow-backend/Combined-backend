@@ -1,0 +1,25 @@
+{
+  "name": "sparrow-microservices-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently -n gateway, user, consolidation, parcel, warehouse, chatbot, eta -c blue, green, yellow, magenta, orange, red \"npm run gateway\" \"npm run user\" \"npm run consolidation\" \"npm run parcel\" \"npm run warehouse\"",
+    "gateway": "cd api-gateway && npm run watch",
+    "user": "cd ./services/user-service && npm run watch",
+    "consolidation" : "cd ./services/consolidation-service && npm run watch",
+    "parcel": "cd ./services/parcel-service && npm run watch",
+    "warehouse": "cd ./services/warehouse-service && npm run watch",
+    "chatbot": "cd ./services/chatbot-service && python app.py",
+    "eta": "cd ./services/eta-service && python app.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10"
+  }
+}

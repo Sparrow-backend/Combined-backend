@@ -1,0 +1,5 @@
+./api-gateway/.env
+./services/consolidation-service/.env
+./services/parcel-service/.env
+./services/user-service/.env
+./services/warehouse-service/.env 
